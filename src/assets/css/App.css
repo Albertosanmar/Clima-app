@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-image: url(https://images.pexels.com/photos/5455617/pexels-photo-5455617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.navbar{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 32px;
+}
+
+
+.logo{
+  font-size: 40px;
+}
+
+.App {
+  text-align: center;
+}
+
+.input-group{
+  width: 60%;
+  margin-top: 150px;
+}
+
+
+
