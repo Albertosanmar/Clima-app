@@ -24,7 +24,7 @@ const ClimaPanel = () => {
         urlWeather = urlWeather + cityUrl +loc;
 
         await fetch(urlWeather).then((response) =>{
-            if(!response.ok) throw new Error ('error')
+            if(!response.ok) throw new Error("Error al obtener la predicción")
             return response.json();
         }).then((weatherData) =>{
             console.log(weatherData);
@@ -40,7 +40,7 @@ const ClimaPanel = () => {
         urlForecast = urlForecast + cityUrl + loc;
 
         await fetch(urlForecast).then((response) =>{
-            if(!response.ok) throw new Error ('error')
+            if(!response.ok) throw new Error("Error al obtener la predicción")
             return response.json();
         }).then((forecastData) =>{
             console.log(forecastData);
