@@ -4,7 +4,6 @@ import Card from './Card';
 
 const ClimaPanel = () => {
     const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
-    console.log("API Key:", apiKey);
     let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=db9ad73cc2325637a062d00f4e9babaf&lang=es";
     let cityUrl = "&q=";
 
