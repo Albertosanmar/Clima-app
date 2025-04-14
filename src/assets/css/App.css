@@ -24,9 +24,7 @@ body {
 }
 
 
-.logo{
-  font-size: 40px;
-}
+
 
 .App {
   text-align: center;
@@ -34,7 +32,6 @@ body {
 
 .input-group{
   width: 60%;
-  margin-top: 150px;
 }
 
 
