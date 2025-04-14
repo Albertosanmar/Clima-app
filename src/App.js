@@ -1,6 +1,6 @@
 import './assets/css/App.css';
-import NavBar from './componets/NavBar';
-import ClimaPanel from './componets/ClimaPanel';
+import NavBar from './components/NavBar';
+import ClimaPanel from './components/ClimaPanel';
 
 
 function App() {

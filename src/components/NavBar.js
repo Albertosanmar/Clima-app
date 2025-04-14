@@ -1,3 +1,5 @@
+import React from 'react';
+
 const NavBar = () => {
 //revisar logo <img className="img" src="public/SkyCast.png" alt="Logo"></img>
     return(
