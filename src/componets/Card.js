@@ -27,7 +27,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
     }
 
     if(showData){
-        url = "http://openweathermap.org/img/w/";
+        url = "https://openweathermap.org/img/w/";
         iconUrl = url + weather.weather[0].icon + ".png";
 
         iconUrl3 = url + forecast.list[1].weather[0].icon + ".png";
@@ -45,12 +45,13 @@ const Card = ({loadingData, showData, weather, forecast}) => {
             {
                 showData === true ? (
                     <div className="container text-center">  
-                        <div class="card border-dark bg-danger bg-opacity-25 text-light mb-3">
-                            <div class="card-header">
-                                <h3 classsName="text">Condiciones Actuales {date}</h3>
+                        <div className="card border-dark bg-danger bg-opacity-25 text-light mb-3">
+                            <div className="card-header">
+                                <h3 className="text">Condiciones Actuales</h3>
                             </div>
                             <div className="row order-last">
-                                <div class="col mt-5">
+                                <div className="col mt-5">
+                                    <p className="card-text">{date}</p>
                                     <h1 className="card-text">{weather.name}</h1>
                                     <h1 className="card-text"><img src={iconUrl} alt="icon"/>{(weather.main.temp - 273.15).toFixed(1)}ºC</h1>
                                 </div>
@@ -66,7 +67,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                         <div className="card mb-3 mx-auto border-dark bg-danger bg-opacity-25 text-light">
                             <div className="row g-0">
                                 <div className="card-header">
-                                    <h3 classsName="text">Previsión</h3>
+                                    <h3 className="text">Previsión</h3>
                                 </div>
                                 <div className="col order-last">
                                     <div className="row mt-4">
