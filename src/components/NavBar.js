@@ -1,17 +1,20 @@
 import React from 'react';
 
 const NavBar = () => {
-//revisar logo <img className="img" src="public/SkyCast.png" alt="Logo"></img>
-    return(
+    return (
         <nav className="navbar-brand">
             <div className="container-fluid"> 
-                <h1 className="navbar text-light">SkyCast</h1>
-                
+                {/* Añadir la imagen aquí */}
+                <img 
+                    className="ms-3 mt-3 img-fluid" 
+                    src="/SkyCast.svg" 
+                    alt="Logo" 
+                    style={{ maxWidth: '100%', height: 'auto' }} // Asegura que se mantenga proporcional
+                />
+
             </div>
         </nav>
-
     );
-
 }
 
 export default NavBar;

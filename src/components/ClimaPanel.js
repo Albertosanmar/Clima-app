@@ -110,28 +110,19 @@ const ClimaPanel = () => {
 
     return (
         <React.Fragment>
-            {/* Formulario para buscar una ciudad */}
-            <Form newLocation={getLocation} />
+            
 
-            {/* Botón de geolocalización debajo del formulario */}
-            <button 
-                onClick={() => getLocation()} 
-                className="btn btn-primary mt-3"
-            >
-                Obtener mi ubicación
-            </button>
+             {/* Formulario para buscar una ciudad */}
+             <Form newLocation={getLocation} />
 
-            {/* Mostrar los resultados */}
-            {loading ? (
-                <p>Cargando...</p>
-            ) : (
+            
                 <Card
                     showData={show}
                     loadingData={loading}
                     weather={weather}
                     forecast={forecast}
                 />
-            )}
+            
         </React.Fragment>
     );
 };
