@@ -1,75 +1,144 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Form from './Form';
 import Card from './Card';
 
 const ClimaPanel = () => {
     const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
-    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=db9ad73cc2325637a062d00f4e9babaf&lang=es";
-    let cityUrl = "&q=";
-
-    let urlForecast ="https://api.openweathermap.org/data/2.5/forecast?appid=db9ad73cc2325637a062d00f4e9babaf&lang=es";
+    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=" + apiKey + "&lang=es";
+    let urlForecast = "https://api.openweathermap.org/data/2.5/forecast?appid=" + apiKey + "&lang=es";
 
     const [weather, setWeather] = useState([]);
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(false);
     const [show, setShow] = useState(false);
-    
 
-    const getLocation = async(loc) => {
-        setLoading(true);
-       
+    // Función para obtener la ubicación del usuario o una ciudad específica
+    const getLocation = async (location = null) => {
+        setLoading(true); // Inicia el estado de carga
 
-        //weather
+        // Si no se pasa una ubicación, usamos la geolocalización
+        if (!location && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const { latitude, longitude } = position.coords;
+                    location = { lat: latitude, lon: longitude };  // Cambiar a un objeto con lat y lon
+                    console.log(`Ubicación obtenida: ${location.lat},${location.lon}`);
 
-        urlWeather = urlWeather + cityUrl +loc;
+                    // Realizar las consultas para clima y pronóstico
+                    fetchWeatherForecast(location);
+                },
+                (error) => {
+                    alert('No se pudo obtener la ubicación');
+                    setLoading(false); // Finaliza el estado de carga en caso de error
+                    setShow(false); // No mostrar los resultados
+                }
+            );
+        } else if (typeof location === 'string') {
+            // Si location es una ciudad, pasarla directamente a la API
+            fetchWeatherForecastByCity(location);
+        } else {
+            // Si se pasa un objeto con lat y lon, usamos las coordenadas
+            fetchWeatherForecast(location);
+        }
+    };
 
-        await fetch(urlWeather).then((response) =>{
-            if(!response.ok) throw new Error("Error al obtener la predicción")
-            return response.json();
-        }).then((weatherData) =>{
-            console.log(weatherData);
-            setWeather(weatherData);
-        }).catch(error =>{
-            console.log(error);
-            setLoading(false);
-            setShow(false);
-        });
+    const fetchWeatherForecast = (location) => {
+        // Consultar el clima actual (modificar la URL para lat y lon)
+        fetch(urlWeather + `&lat=${location.lat}&lon=${location.lon}`)
+            .then((response) => {
+                if (!response.ok) throw new Error("Error al obtener la predicción");
+                return response.json();
+            })
+            .then((weatherData) => {
+                setWeather(weatherData);
+            })
+            .catch((error) => {
+                setLoading(false);
+                setShow(false);
+            });
 
-        //Forecats
+        // Consultar el pronóstico (modificar la URL para lat y lon)
+        fetch(urlForecast + `&lat=${location.lat}&lon=${location.lon}`)
+            .then((response) => {
+                if (!response.ok) throw new Error("Error al obtener la predicción");
+                return response.json();
+            })
+            .then((forecastData) => {
+                setForecast(forecastData);
+                setLoading(false);
+                setShow(true); // Mostrar los resultados después de obtener los datos
+            })
+            .catch((error) => {
+                setLoading(false);
+                setShow(false);
+            });
+    };
 
-        urlForecast = urlForecast + cityUrl + loc;
+    const fetchWeatherForecastByCity = (city) => {
+        // Consultar el clima actual (por nombre de ciudad)
+        fetch(urlWeather + `&q=${city}`)
+            .then((response) => {
+                if (!response.ok) throw new Error("Error al obtener la predicción");
+                return response.json();
+            })
+            .then((weatherData) => {
+                setWeather(weatherData);
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+                setShow(false);
+            });
 
-        await fetch(urlForecast).then((response) =>{
-            if(!response.ok) throw new Error("Error al obtener la predicción")
-            return response.json();
-        }).then((forecastData) =>{
-            console.log(forecastData);
-            setForecast(forecastData);
+        // Consultar el pronóstico (por nombre de ciudad)
+        fetch(urlForecast + `&q=${city}`)
+            .then((response) => {
+                if (!response.ok) throw new Error("Error al obtener la predicción");
+                return response.json();
+            })
+            .then((forecastData) => {
+                setForecast(forecastData);
+                setLoading(false);
+                setShow(true); // Mostrar los resultados después de obtener los datos
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+                setShow(false);
+            });
+    };
 
-            setLoading(false);
-            setShow(true);
-
-        }).catch(error =>{
-            console.log(error);
-            setLoading(false);
-            setShow(false);
-        });
-    }
-
-    return(
+    return (
         <React.Fragment>
-            <Form
-                newLocation = {getLocation}
-            />
+            {/* Formulario para buscar una ciudad */}
+            <Form newLocation={getLocation} />
 
-            <Card
-                showData = {show}
-                loadingData = {loading}
-                weather = {weather}
-                forecast ={forecast}
-            />
+            {/* Botón de geolocalización debajo del formulario */}
+            <button 
+                onClick={() => getLocation()} 
+                className="btn btn-primary mt-3"
+            >
+                Obtener mi ubicación
+            </button>
+
+            {/* Mostrar los resultados */}
+            {loading ? (
+                <p>Cargando...</p>
+            ) : (
+                <Card
+                    showData={show}
+                    loadingData={loading}
+                    weather={weather}
+                    forecast={forecast}
+                />
+            )}
         </React.Fragment>
     );
-}
+};
 
 export default ClimaPanel;
+
+
+
+
+
