@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import ClimaPanel from './components/ClimaPanel';
 import Footer from './components/Footer';
 import 'font-awesome/css/font-awesome.min.css';
+import'./assets/css/App.css';
 
 function App() {
   return (

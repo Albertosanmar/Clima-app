@@ -7,12 +7,17 @@
   font-family: "Rubik", sans-serif;
 }
 
-body {
-  background-image: url(https://images.pexels.com/photos/5455617/pexels-photo-5455617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  body {
+    background-image: url('/public/nubes-r.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
 }
+
 
 
 .App {
