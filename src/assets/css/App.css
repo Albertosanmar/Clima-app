@@ -159,7 +159,7 @@ body {
 
 /* CARD */
 .card-header {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(197, 70, 70, 0.1);
   color: white;
 }
 
@@ -174,21 +174,22 @@ body {
 
 .card-text {
   font-size: 1.1rem;
+  color: white;
 }
 
 .card-icon {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 }
 
 .card-temp {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 .description img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 .temp {
@@ -197,13 +198,15 @@ body {
 }
 
 .card {
-  border: 1px solid #000;
+  border: 1px solid #392a2a;
 }
 
 .card-custom {
   background-color: rgba(220, 53, 69, 0.1); /* Color rojo original con opacidad */
-  border-color: #dc3545; /* Color rojo original */
+  color: white;
 }
+
+
 
 /* FOOTER */
 .footer-logo {
