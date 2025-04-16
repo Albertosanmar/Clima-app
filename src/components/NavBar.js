@@ -69,9 +69,11 @@ const NavBar = () => {
                                     ← Volver al menú
                                 </button>
                                 <div className="about-content">
-                                    <h5>Acerca de SkyCast</h5>
+                                    <h5 className='fs-2'>Acerca de SkyCast</h5>
                                     <p>
-                                        SkyCast es tu app confiable para conocer el clima en cualquier parte del mundo.  
+                                        SkyCast es tu app confiable para conocer el clima en cualquier parte del mundo utilizando la API de OpenWeather. La aplicación permite a los usuarios consultar el pronóstico del
+                                        clima en tiempo real para una ubicación determinada. 
+                                        Esta aplicación está desarrollada con React, un popular framework de JavaScript, que garantiza una experiencia interactiva y fluida y la libreria Bootstrap para los estilos en el editor de código VS Code.
                                         Es el proyecto final de grado en Desarrollo de Aplicaciones Multiplataforma de Alberto Sanmartín Taylor.
                                     </p>
                                 </div>
