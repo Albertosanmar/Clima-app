@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from './Form';
 import Card from './Card';
+import ExtendedForecastCard from './ExtendedForecastCard';
 
 const ClimaPanel = () => {
     const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
@@ -22,7 +23,6 @@ const ClimaPanel = () => {
                 (position) => {
                     const { latitude, longitude } = position.coords;
                     location = { lat: latitude, lon: longitude };  // Cambiar a un objeto con lat y lon
-                    
 
                     // Realizar las consultas para clima y pronóstico
                     fetchWeatherForecast(location);
@@ -116,13 +116,15 @@ const ClimaPanel = () => {
              <Form newLocation={getLocation} />
 
             
-                <Card
-                    showData={show}
-                    loadingData={loading}
-                    weather={weather}
-                    forecast={forecast}
-                />
-            
+             <Card
+                showData={show}
+                loadingData={loading}
+                weather={weather}
+                forecast={forecast}
+             />
+             <ExtendedForecastCard forecast={forecast} showData={show} />
+
+             
         </React.Fragment>
     );
 };

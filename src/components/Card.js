@@ -62,7 +62,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                         <div className="card card-custom mb-3 mx-auto">
                             <div className="row g-0">
                                 <div className="card-header">
-                                    <h3 className="card-title">Previsión</h3>
+                                    <h3 className="card-title">Próximas horas</h3>
                                 </div>
                                 <div className="col">
                                     <div className="row mt-4">
