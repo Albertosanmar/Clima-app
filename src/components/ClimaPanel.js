@@ -22,7 +22,7 @@ const ClimaPanel = () => {
                 (position) => {
                     const { latitude, longitude } = position.coords;
                     location = { lat: latitude, lon: longitude };  // Cambiar a un objeto con lat y lon
-                    console.log(`Ubicación obtenida: ${location.lat},${location.lon}`);
+                    
 
                     // Realizar las consultas para clima y pronóstico
                     fetchWeatherForecast(location);
