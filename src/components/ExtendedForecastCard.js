@@ -41,17 +41,17 @@ const ExtendedForecastCard = ({ forecast, showData }) => {
                                         <div className="col">
                                             <p>{forecastDate24}h</p>
                                             <p className="description"><img src={iconUrl24} alt="icon"/></p>
-                                            <p className="temp">{(forecast.list[8].main.temp - 273.15).toFixed(1)}ºC</p>
+                                            <p className="temp"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(forecast.list[8].main.temp - 273.15).toFixed(1)}ºC</p>
                                         </div>
                                         <div className="col">
                                             <p>{forecastDate48}h</p>
                                             <p className="description"><img src={iconUrl48} alt="icon"/></p>
-                                            <p className="temp">{(forecast.list[16].main.temp - 273.15).toFixed(1)}ºC</p>
+                                            <p className="temp"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(forecast.list[16].main.temp - 273.15).toFixed(1)}ºC</p>
                                         </div>
                                         <div className="col">
                                             <p>{forecastDate72}h</p>
                                             <p className="description"><img src={iconUrl72} alt="icon"/></p>
-                                            <p className="temp">{(forecast.list[24].main.temp - 273.15).toFixed(1)}ºC</p>
+                                            <p className="temp"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(forecast.list[24].main.temp - 273.15).toFixed(1)}ºC</p>
                                         </div>
 
 

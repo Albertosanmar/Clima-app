@@ -40,9 +40,11 @@ const NavBar = () => {
                     <button 
                         onClick={toggleModal}
                         className="close-btn"
+                        aria-label="Cerrar"
                     >
-                        ×
+                        <i className="fa fa-times" aria-hidden="true"></i>
                     </button>
+
 
                     <div className="mt-5 me-auto ms-4">
                         {!showAbout ? (

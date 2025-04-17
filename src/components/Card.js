@@ -2,11 +2,7 @@ import React from 'react';
 import Spinner from './Spinner';
 
 const Card = ({loadingData, showData, weather, forecast}) => {
-    const today = new Date();
-    const day = today.getDate();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
-    const date = `${day}/${month}/${year}`;
+    
 
     let url = "";
     let iconUrl = "";
@@ -42,21 +38,18 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                                 <h3 className="card-title">Condiciones Actuales</h3>
                             </div>
                             <div className="row">
-                                <div className="col mt-3">
-                                    <p className="card-text">{date}</p>
+                                <div className="col mt-5">
                                     <h1 className="card-text fs-1">{weather.name}</h1>
-                                    <h1 className="card-text fs-1">
-                                        <img src={iconUrl} alt="icon" className="card-icon"/>
-                                        {(weather.main.temp - 273.15).toFixed(1)}ºC
-                                    </h1>
+                                    <h1 className="card-text fs-1"><img src={iconUrl} alt="icon" className="card-icon"/>{(weather.main.temp - 273.15).toFixed(1)}ºC</h1>
                                 </div>
                                 <div className="col py-3">
-                                    <p className="card-text">Max: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text">Min: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text">Sensación: {(weather.main.feels_like - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text">Humedad: {weather.main.humidity}%</p>
-                                    <p className="card-text">Viento: {weather.wind.speed}m/s</p>
+                                    <p className="card-text"><i className="fa fa-thermometer-full me-2" aria-hidden="true"></i>: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</p>
+                                    <p className="card-text"><i className="fa fa-snowflake-o me-2" aria-hidden="true"></i>: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</p>
+                                    <p className="card-text"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>: {(weather.main.feels_like - 273.15).toFixed(1)}º </p>
+                                    <p className="card-text"><i className="fa fa-tint me-2" aria-hidden="true"></i>: {weather.main.humidity}%</p>
+                                    <p className="card-text"><i className="fa fa-flag me-2" aria-hidden="true"></i>: {weather.wind.speed}m/s</p>
                                 </div>
+
                             </div>    
                         </div>
                         <div className="card card-custom mb-3 mx-auto">
@@ -66,26 +59,20 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                                 </div>
                                 <div className="col">
                                     <div className="row mt-4">
-                                        <div className="col fs-3">
-                                            <p>{forecastDate3}h</p>
-                                            <p className="description">
-                                                <img src={iconUrl3} alt="icon" />
-                                            </p>
-                                            <p className="temp">{(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC</p>
+                                        <div className="col">
+                                            <p className="fs-4">{forecastDate3}h</p>
+                                            <p className="description"><img src={iconUrl3} alt="icon" /></p>
+                                            <p className="temp"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(forecast.list[1].main.temp - 273.15).toFixed(1)}ºC</p>
                                         </div>
                                         <div className="col fs-3">
-                                            <p>{forecastDate6}h</p>
-                                            <p className="description">
-                                                <img src={iconUrl6} alt="icon" />
-                                            </p>
-                                            <p className="temp">{(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
+                                            <p className="fs-4">{forecastDate6}h</p>
+                                            <p className="description"><img src={iconUrl6} alt="icon" /></p>
+                                            <p className="temp"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(forecast.list[2].main.temp - 273.15).toFixed(1)}ºC</p>
                                         </div>
                                         <div className="col fs-3">
-                                            <p>{forecastDate9}h</p>
-                                            <p className="description">
-                                                <img src={iconUrl9} alt="icon" />
-                                            </p>
-                                            <p className="temp">{(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
+                                            <p className="fs-4">{forecastDate9}h</p>
+                                            <p className="description"><img src={iconUrl9} alt="icon" /></p>
+                                            <p className="temp"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(forecast.list[3].main.temp - 273.15).toFixed(1)}ºC</p>
                                         </div>
                                     </div>
                                 </div>

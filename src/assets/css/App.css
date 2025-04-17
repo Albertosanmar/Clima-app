@@ -33,7 +33,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 1rem; 
+  margin: 5rem; 
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -62,28 +62,50 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgba(107, 101, 112, 1);
   font-size: 2.5rem;
   margin: 0;
   white-space: nowrap;
   z-index: 1;
+  -webkit-text-stroke: 1px white; 
+  text-stroke: 2px white; /* Para navegadores que no son WebKit */
 }
 
-/* HAMBURGER */
 .hamburger-btn {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 25px;
+  justify-content: space-between; /* Distribuye las líneas con espacio entre ellas */
+  align-items: center;
+  width: 30px; /* Tamaño del botón reducido */
+  height: 30px; /* Asegura que el botón siga siendo un círculo perfecto */
   border: none;
-  background: transparent;
+  background-color: rgba(107, 101, 112, 0.3); /* Color sólido de fondo */
+  border-radius: 50%; /* Redondeo completo */
+  padding: 5px; /* Añadido para que las líneas no toquen el borde */
+  cursor: pointer; /* Aparece el puntero al pasar el mouse sobre el botón */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
 .hamburger-line {
-  height: 3px;
-  background-color: white;
-  width: 100%;
+  width: 20px; /* Tamaño más pequeño de las líneas */
+  height: 3px; /* Grosor reducido de las líneas */
+  background-color: #A1EF8B; /* Color de las líneas */
+  border-radius: 10px; /* Bordes redondeados */
+  transition: transform 0.3s ease; /* Transición suave para el cambio de estado */
+}
+
+/* Aumenta el espacio entre las líneas */
+.hamburger-btn {
+  gap: 5px; /* Espacio de separación entre las líneas (ajustado para que no toquen el borde) */
+}
+
+.hamburger-btn:hover {
+  background-color: rgba(83, 89, 95, 0.95); /* Cambia el fondo cuando se pasa el cursor */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+}
+
+.hamburger-btn:active {
+  transform: scale(0.95); /* Efecto de contracción cuando se hace clic */
 }
 
 /* MODAL */
@@ -116,7 +138,6 @@ html, body {
   border-radius: 50%;
   background-color: #A1EF8B; ;
   border: none;
-  margin-right: 1.5rem;
   margin-top: 1.8rem;
 }
 
@@ -178,6 +199,13 @@ html, body {
   border-bottom-left-radius: 0.25rem;
 }
 
+.loading-spinner {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+}
+
 /* SPINNER */
 .spinner-overlay {
   height: 100vh;
@@ -224,6 +252,26 @@ html, body {
 .temp {
   font-size: 1.2rem;
   
+}
+
+.fa-thermometer-full{
+  color: #A1EF8B;
+}
+
+.fa-snowflake-o{
+  color: #A1EF8B;
+}
+
+.fa-thermometer-half{
+  color: #A1EF8B;
+}
+
+.fa-tint{
+  color: #A1EF8B;
+}
+
+.fa-flag{
+  color: #A1EF8B;
 }
 
 .card {
@@ -283,6 +331,11 @@ body::before {
     width: 80%; 
     padding: 1rem; 
   }
+
+  .app-wrapper {
+    margin: 1.2rem; 
+  }
+
 }
 
 

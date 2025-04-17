@@ -112,10 +112,7 @@ const ClimaPanel = () => {
     return (
         <React.Fragment>
             {weather.weather && weather.weather[0] && (
-            <Background description={weather.weather[0].description} />
-)}
-
-
+            <Background description={weather.weather[0].description} />)}
             <Form newLocation={getLocation} />
             <Card showData={show} loadingData={loading} weather={weather} forecast={forecast} />
             <ExtendedForecastCard forecast={forecast} showData={show} />

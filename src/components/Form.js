@@ -47,8 +47,3 @@ const Form = ({ newLocation }) => {
 };
 
 export default Form;
-
-
-
-
-
