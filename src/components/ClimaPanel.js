@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 import Card from './Card';
 import ExtendedForecastCard from './ExtendedForecastCard';
+import Background from './Background'; 
 
 const ClimaPanel = () => {
     const apiKey = process.env.REACT_APP_OPENWEATHER_API_KEY;
@@ -12,7 +13,7 @@ const ClimaPanel = () => {
     const [forecast, setForecast] = useState([]);
     const [loading, setLoading] = useState(false);
     const [show, setShow] = useState(false);
-
+   
     // Función para obtener la ubicación del usuario o una ciudad específica
     const getLocation = async (location = null) => {
         setLoading(true); // Inicia el estado de carga
@@ -110,28 +111,16 @@ const ClimaPanel = () => {
 
     return (
         <React.Fragment>
-            
+            {weather.weather && weather.weather[0] && (
+            <Background description={weather.weather[0].description} />
+)}
 
-             {/* Formulario para buscar una ciudad */}
-             <Form newLocation={getLocation} />
 
-            
-             <Card
-                showData={show}
-                loadingData={loading}
-                weather={weather}
-                forecast={forecast}
-             />
-             <ExtendedForecastCard forecast={forecast} showData={show} />
-
-             
+            <Form newLocation={getLocation} />
+            <Card showData={show} loadingData={loading} weather={weather} forecast={forecast} />
+            <ExtendedForecastCard forecast={forecast} showData={show} />
         </React.Fragment>
     );
 };
 
 export default ClimaPanel;
-
-
-
-
-

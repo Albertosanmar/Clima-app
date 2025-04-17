@@ -19,7 +19,7 @@ const NavBar = () => {
                 <div className="container-fluid d-flex justify-content-between align-items-center position-relative">
                     <img 
                         className="logo-img" 
-                        src="/SkyCast.svg" 
+                        src="/logo-skycast.svg" 
                         alt="Logo"
                     />
                     <h1 className="app-title">SkyCast</h1>
@@ -44,11 +44,11 @@ const NavBar = () => {
                         ×
                     </button>
 
-                    <div className="text-light mt-5 me-auto ms-4">
+                    <div className="mt-5 me-auto ms-4">
                         {!showAbout ? (
                             <ul className="list-unstyled">
                                 <li className="mb-3">
-                                    <button onClick={toggleAbout} className="btn btn-link text-light text-decoration-none p-0">
+                                    <button onClick={toggleAbout} className="btn btn-link text-light text-decoration-none p-0 about-button">
                                         Acerca de SkyCast
                                     </button>
                                 </li>
@@ -57,7 +57,7 @@ const NavBar = () => {
                                         href="https://github.com/Albertosanmar/Clima-app" 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="text-light text-decoration-none d-flex align-items-center gap-2"
+                                        className="text-light text-decoration-none d-flex align-items-center gap-2 github-link"
                                     >
                                         <i className="fa fa-github me-2 github-icon"></i> GitHub
                                     </a>

@@ -37,7 +37,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
             {
                 showData === true ? (
                     <div className="container text-center">  
-                        <div className="card card-custom mb-3">
+                        <div className="card card-custom mb-3 mx-auto">
                             <div className="card-header">
                                 <h3 className="card-title">Condiciones Actuales</h3>
                             </div>

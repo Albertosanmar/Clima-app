@@ -14,46 +14,29 @@ const Form = ({ newLocation }) => {
     };
 
     return (
-        <div className="container mt-4 d-flex justify-content-center">
+        <div className="form-container">
             <form
                 onSubmit={onSubmit}
-                className="d-flex w-100 justify-content-center"
-                style={{ maxWidth: '60vw' }}
+                className="form-group"
             >
-                <div className="input-group w-100" style={{ borderRadius: '0.25rem' }}>
+                <div className="input-group input-group-custom">
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-control input-custom"
                         placeholder="Ciudad"
                         onChange={(e) => setCity(e.target.value)}
-                        style={{
-                            borderTopLeftRadius: '0.25rem',
-                            borderBottomLeftRadius: '0.25rem',
-                            borderTopRightRadius: '0',
-                            borderBottomRightRadius: '0'
-                        }}
                     />
                     <button
-                        className="btn btn-primary"
+                        className="btn btn-primary button-custom"
                         type="submit"
-                        style={{
-                            borderTopLeftRadius: '0',
-                            borderBottomLeftRadius: '0',
-                            borderTopRightRadius: '0.25rem',
-                            borderBottomRightRadius: '0.25rem',
-                        }}
                     >
                         Buscar
                     </button>
                     <button
                         type="button"
-                        className="btn btn-primary ms-2"
+                        className="btn btn-primary ms-2 button-location"
                         onClick={handleGeoClick}
                         title="Usar mi ubicación"
-                        style={{
-                            borderTopLeftRadius: '0.25rem',
-                            borderBottomLeftRadius: '0.25rem',
-                        }}
                     >
                         <i className="fa fa-location-arrow"></i>
                     </button>
@@ -64,6 +47,7 @@ const Form = ({ newLocation }) => {
 };
 
 export default Form;
+
 
 
 

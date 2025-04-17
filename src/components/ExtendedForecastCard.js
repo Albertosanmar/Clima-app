@@ -3,7 +3,7 @@ import React from 'react';
 const ExtendedForecastCard = ({ forecast, showData }) => {
     const url = "https://openweathermap.org/img/w/";
     
-    // Declaración de variables como en Card.js
+    
     let iconUrl24 = "";
     let iconUrl48 = "";
     let iconUrl72 = "";

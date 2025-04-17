@@ -8,18 +8,41 @@
 }
 
 body {
- 
-  background-image: url('/public/nubes-r.jpg');
-  background-position: center center;
+  background-image: url('/public/backgrounds/nubes-r.jpg');
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
 }
 
+html, body {
+  min-height: 100%;
+}
+
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+.app-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem; 
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  min-height: calc(100vh - 2rem); 
+}
+
+
 
 /* NAVBAR */
 .navbar-custom {
@@ -30,7 +53,8 @@ body {
 .logo-img {
   max-width: 100px;
   height: auto;
-  margin-top: 0.5rem;
+  margin-left: -25px;
+  margin-top: 1rem;
 }
 
 .app-title {
@@ -47,7 +71,6 @@ body {
 
 /* HAMBURGER */
 .hamburger-btn {
-  margin-right: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -78,12 +101,20 @@ body {
   z-index: 999;
 }
 
+.about-button{
+  color: #A1EF8B; 
+}
+
+.github-link {
+  color: #A1EF8B; 
+}
+
 .close-btn {
   width: 40px;
   height: 40px;
   font-weight: bold;
   border-radius: 50%;
-  background-color: white;
+  background-color: #A1EF8B; ;
   border: none;
   margin-right: 1.5rem;
   margin-top: 1.8rem;
@@ -107,6 +138,7 @@ body {
 /* ICON */
 .github-icon {
   font-size: 1.2rem;
+  color: #A1EF8B;
 }
 
 /* FORM */
@@ -159,8 +191,8 @@ body {
 
 /* CARD */
 .card-header {
-  background-color: rgba(197, 70, 70, 0.1);
-  color: white;
+  background-color: rgba(107, 101, 112, 0.3);
+  color: rgb(255, 255, 255);
 }
 
 .card-title {
@@ -168,9 +200,6 @@ body {
   margin-bottom: 1rem;
 }
 
-.card-body {
-  background-color: rgba(255, 255, 255, 0.1);
-}
 
 .card-text {
   font-size: 1.1rem;
@@ -198,12 +227,13 @@ body {
 }
 
 .card {
-  border: 1px solid #392a2a;
+  border: 1px solid #6B6570;
 }
 
 .card-custom {
-  background-color: rgba(220, 53, 69, 0.1); /* Color rojo original con opacidad */
-  color: white;
+  background-color: rgba(79, 78, 78, 0.236);
+  color: rgb(255, 255, 255);
+  width: 60%;
 }
 
 
@@ -212,6 +242,7 @@ body {
 .footer-logo {
   width: 50px;
   height: auto;
+  margin-bottom: -10px;
 }
 
 footer {
@@ -229,6 +260,29 @@ footer .container {
   align-items: center;
 }
 
+/* BACKGROUND OVERLAY CON FILTROS */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: background-image 1.5s ease-in-out, filter 1s ease-in-out;
+  background-image: var(--bg-image);
+  filter: brightness(0.7) saturate(0.9); 
+}
 
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .card-custom {
+    width: 80%; 
+    padding: 1rem; 
+  }
+}
 
 
