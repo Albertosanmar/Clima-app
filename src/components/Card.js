@@ -3,7 +3,6 @@ import Spinner from './Spinner';
 
 const Card = ({loadingData, showData, weather, forecast}) => {
     
-
     let url = "";
     let iconUrl = "";
     let iconUrl3 = "";
@@ -34,20 +33,17 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                 showData === true ? (
                     <div className="container text-center">  
                         <div className="card card-custom mb-3 mx-auto">
-                            <div className="card-header">
-                                <h3 className="card-title">Condiciones Actuales</h3>
-                            </div>
                             <div className="row">
-                                <div className="col mt-5">
+                                <div className="col mt-4">
                                     <h1 className="card-text fs-1">{weather.name}</h1>
                                     <h1 className="card-text fs-1"><img src={iconUrl} alt="icon" className="card-icon"/>{(weather.main.temp - 273.15).toFixed(1)}ºC</h1>
                                 </div>
                                 <div className="col py-3">
-                                    <p className="card-text"><i className="fa fa-thermometer-full me-2" aria-hidden="true"></i>: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text"><i className="fa fa-snowflake-o me-2" aria-hidden="true"></i>: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>: {(weather.main.feels_like - 273.15).toFixed(1)}º </p>
-                                    <p className="card-text"><i className="fa fa-tint me-2" aria-hidden="true"></i>: {weather.main.humidity}%</p>
-                                    <p className="card-text"><i className="fa fa-flag me-2" aria-hidden="true"></i>: {weather.wind.speed}m/s</p>
+                                    <p className="card-text"><i className="fa fa-thermometer-full me-2" aria-hidden="true"></i>{(weather.main.temp_max - 273.15).toFixed(1)}ºC</p>
+                                    <p className="card-text"><i className="fa fa-snowflake-o me-2" aria-hidden="true"></i>{(weather.main.temp_min - 273.15).toFixed(1)}ºC</p>
+                                    <p className="card-text"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(weather.main.feels_like - 273.15).toFixed(1)}º </p>
+                                    <p className="card-text"><i className="fa fa-tint me-2" aria-hidden="true"></i>{weather.main.humidity}%</p>
+                                    <p className="card-text"><i className="fa fa-flag me-2" aria-hidden="true"></i>{weather.wind.speed}m/s</p>
                                 </div>
 
                             </div>    

@@ -6,17 +6,17 @@ const Background = ({ description }) => {
 
     
     const backgrounds = {
-        'cielo claro': '/backgrounds/despejado2.jpg',
+        'cielo claro': '/backgrounds/soleado.jpg',
         'pocas nubes': '/backgrounds/sol-nubes.jpg',
-        'nubes dispersas': '/backgrounds/sol-nubes.jpg',
-        'nubes rotas': '/backgrounds/nubes-ro.jpg',
-        'lluvia moderada': '/backgrounds/lluvia-g.jpg',
-        'lluvia ligera': '/backgrounds/lluvia-l.jpg',
-        'lluvia': '/backgrounds/lluvia-g.jpg',
+        'nubes dispersas': '/backgrounds/nubes-dispersas.jpg',
+        'nubes rotas': '/backgrounds/nubes-rotas.jpg',
+        'lluvia moderada': '/backgrounds/lluvia.jpg',
+        'lluvia ligera': '/backgrounds/lluvia.jpg',
+        'lluvia': '/backgrounds/lluvia.jpg',
         'tormenta': '/backgrounds/tormenta.jpg',
-        'nieve': '/backgrounds/nevando.jpg',
+        'nieve': '/backgrounds/nevado.jpg',
         'niebla': '/backgrounds/niebla.jpg',
-        'default': '/backgrounds/nubes-r.jpg', 
+        'default': '/backgrounds/default.jpg', 
     };
 
       const lowerDesc = description.toLowerCase();

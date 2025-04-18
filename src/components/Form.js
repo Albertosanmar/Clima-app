@@ -15,31 +15,11 @@ const Form = ({ newLocation }) => {
 
     return (
         <div className="form-container">
-            <form
-                onSubmit={onSubmit}
-                className="form-group"
-            >
+            <form onSubmit={onSubmit} className="form-group">
                 <div className="input-group input-group-custom">
-                    <input
-                        type="text"
-                        className="form-control input-custom"
-                        placeholder="Ciudad"
-                        onChange={(e) => setCity(e.target.value)}
-                    />
-                    <button
-                        className="btn btn-primary button-custom"
-                        type="submit"
-                    >
-                        Buscar
-                    </button>
-                    <button
-                        type="button"
-                        className="btn btn-primary ms-2 button-location"
-                        onClick={handleGeoClick}
-                        title="Usar mi ubicación"
-                    >
-                        <i className="fa fa-location-arrow"></i>
-                    </button>
+                    <input type="text" className="form-control input-custom" placeholder="Ciudad" onChange={(e) => setCity(e.target.value)}/>
+                    <button className="btn btn-secondary button-custom" type="submit">Buscar</button>
+                    <button type="button" className="btn btn-secondary ms-2 button-location" onClick={handleGeoClick} title="Usar mi ubicación"><i className="fa fa-location-arrow"></i></button>
                 </div>
             </form>
         </div>
