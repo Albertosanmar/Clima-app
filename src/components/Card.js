@@ -39,11 +39,11 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                                     <h1 className="card-text fs-1"><img src={iconUrl} alt="icon" className="card-icon"/>{(weather.main.temp - 273.15).toFixed(1)}ºC</h1>
                                 </div>
                                 <div className="col py-3">
-                                    <p className="card-text"><i className="fa fa-thermometer-full me-2" aria-hidden="true"></i>{(weather.main.temp_max - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text"><i className="fa fa-snowflake-o me-2" aria-hidden="true"></i>{(weather.main.temp_min - 273.15).toFixed(1)}ºC</p>
-                                    <p className="card-text"><i className="fa fa-thermometer-half me-2" aria-hidden="true"></i>{(weather.main.feels_like - 273.15).toFixed(1)}º </p>
-                                    <p className="card-text"><i className="fa fa-tint me-2" aria-hidden="true"></i>{weather.main.humidity}%</p>
-                                    <p className="card-text"><i className="fa fa-flag me-2" aria-hidden="true"></i>{weather.wind.speed}m/s</p>
+                                    <p className="card-text"><i className="fa fa-thermometer-full me-2" aria-hidden="true" alt="Máxima"></i>{(weather.main.temp_max - 273.15).toFixed(1)}ºC</p>
+                                    <p className="card-text"><i className="fa fa-snowflake-o me-2" aria-hidden="true" alt="Mínima"></i>{(weather.main.temp_min - 273.15).toFixed(1)}ºC</p>
+                                    <p className="card-text"><i className="fa fa-thermometer-half me-2" aria-hidden="true" alt="Sensación térmica"></i>{(weather.main.feels_like - 273.15).toFixed(1)}º </p>
+                                    <p className="card-text"><i className="fa fa-tint me-2" aria-hidden="true" alt="Humedad"></i>{weather.main.humidity}%</p>
+                                    <p className="card-text"><i className="fa fa-flag me-2" aria-hidden="true" alt="Velocidad del viento"></i>{weather.wind.speed}m/s</p>
                                 </div>
 
                             </div>    
