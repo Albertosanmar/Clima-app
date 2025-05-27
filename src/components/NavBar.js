@@ -20,7 +20,7 @@ const NavBar = () => {
                     <img className="logo-img" src="/logo-skycast.svg" alt="Logo de SkyCast montañas con un sol verde por detras"/>
                     <h1 className="app-title">SkyCast</h1>
 
-                    <button onClick={toggleModal} className="hamburger-btn" alt="Boton hamburguesa">
+                    <button onClick={toggleModal} className="hamburger-btn" input type="button" alt="Boton hamburguesa">
                         <span className="hamburger-line"></span>
                         <span className="hamburger-line"></span>
                         <span className="hamburger-line"></span>
